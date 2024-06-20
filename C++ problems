@@ -1,0 +1,18 @@
+     Largest number in an array!!!
+  #include <iostream>
+
+int main() {
+    // Write C++ code here
+    int nums[] = {1,5,9,2,6,15,4};
+    int max = nums[0];
+    
+    int n = sizeof(nums)/sizeof(nums[0]);
+    
+    for (int i = 1; i < n; i++){
+        if (nums[i] > max){
+            max = nums[i];
+        }
+    }
+    std::cout << "Largest Numbers: "<< max;
+    return 0;
+}
