@@ -1,0 +1,49 @@
+GCD!!
+
+#include <stdio.h>
+
+int main()  
+{  
+   int a, b, x;
+
+   printf("Enter two integers: ");
+   scanf("%d %d", &a, &b);  // Corrected the scanf format and moved it before initializing x
+   
+   x = (a > b) ? b : a; // Initialize x after reading a and b
+   
+   while(x > 0){
+       if(a % x == 0 && b % x == 0){
+           break;
+       }
+       x--;
+   }
+   
+   printf("GCD = %d\n", x);
+   return 0;
+}
+
+
+
+LCM!!
+
+#include <stdio.h>
+
+int main()  
+{  
+   int a, b, x;
+
+   printf("Enter two integers: ");
+   scanf("%d %d", &a, &b);  // Corrected the scanf format and moved it before initializing x
+   
+   x = (a > b) ? b : a; // Initialize x after reading a and b
+   
+   while(x > 0){
+       if(x % a == 0 && x % b == 0){
+           break;
+       }
+       x++;
+   }
+   
+   printf("LCM = %d\n", x);
+   return 0;
+}
