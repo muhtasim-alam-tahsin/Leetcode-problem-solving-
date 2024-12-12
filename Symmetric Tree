@@ -12,4 +12,4 @@ bool isMirror(TreeNode *left,TreeNode *right){
         if(root==nullptr) return true;
         return isMirror(root->left,root->right);
         
-    }
+}
