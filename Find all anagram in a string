@@ -1,0 +1,26 @@
+Find all anagram in a string!!!
+
+
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        if(p.size()>s.size()) return {};
+        vector<int> freqP(26,0);
+        vector<int> freqS(26,0);
+        vector<int>ans;
+        int start=0,end=p.size()-1;
+        for (int i = 0; i < p.size(); i++) {
+            freqP[p[i] - 'a']++;
+            freqS[s[i] - 'a']++;
+        }
+        while(end<s.size()){
+            if(freqP==freqS) {
+                ans.push_back(start);
+            }end +=1;
+            if(end<s.size()){
+                freqS[s[end]-'a'] += 1;
+            }freqS[s[start]-'a'] -= 1;
+            start += 1;
+        }return ans;
+    }
+};
