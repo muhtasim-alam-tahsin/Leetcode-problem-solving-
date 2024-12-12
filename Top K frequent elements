@@ -1,0 +1,26 @@
+ Top K frequent elements!!!
+
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int,int>counter;
+        for(int i:nums){
+            counter[i]++;
+        }
+        auto comp = [] (pair<int,int>& a,pair<int,int>& b)->bool{
+            if (a.second == b.second)
+                return a.first > a.first;
+            return a.second < b.second;
+        };
+        priority_queue<pair<int,int>, vector<pair<int,int>>,decltype(comp)>heap(comp);
+        for(auto& entry: counter){
+            heap.push({entry.first,entry.second});
+        }
+        vector<int>res;
+        while(k-->0){
+            res.push_back(heap.top().first);
+            heap.pop();
+        }
+        return res;
+    }
+};
