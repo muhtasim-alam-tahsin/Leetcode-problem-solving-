@@ -1,3 +1,7 @@
+Approach : 1. Find the transpose matrix.
+           2. Swap columns.
+
+
 class Solution {
     public:
         void rotate(vector<vector<int>>& matrix) {
