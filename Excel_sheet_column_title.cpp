@@ -1,3 +1,6 @@
+Approach : Took an empty string.
+           As 'A' is initialized and appened in that string, columnNumber is decreased.
+
 class Solution {
     public:
         string convertToTitle(int columnNumber) {
